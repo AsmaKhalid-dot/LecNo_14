@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.zip.Inflater;
+
 public class MainActivity extends AppCompatActivity {
     Button button;
     @Override
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Dialog");
         builder.setMessage("It is a Message of Dialog Box");
         builder.setCancelable(false);
-        LayoutInflater inflater
+        LayoutInflater inflater=this.getLayoutInflater();
+        builder.setView(Inflater.inflate(R.layout.mylayout,null));
         builder.setPositiveButton("Positive", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
