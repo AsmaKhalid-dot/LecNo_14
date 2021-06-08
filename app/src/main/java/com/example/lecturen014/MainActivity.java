@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
@@ -22,6 +23,19 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Dialog");
         builder.setMessage("It is a Message of Dialog Box");
         builder.setCancelable(false);
-        
+        builder.setPositiveButton("Positive", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(MainActivity.this,"Positive button was clicked",Toast.LENGTH_LONG).show();
+            }
+        });
+        builder.setNegativeButton("Negative", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this,"Negative Button was clicked",Toast.LENGTH_LONG).show();
+            }
+        });
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
     }
 }
