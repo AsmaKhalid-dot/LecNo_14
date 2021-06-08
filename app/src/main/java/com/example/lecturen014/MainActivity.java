@@ -3,6 +3,7 @@ package com.example.lecturen014;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void Dialog(View view) {
         AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Dialog Box");
-        builder.setMessage("It is a message of Dialog Box");
+        builder.setTitle("Dialog");
+        builder.setMessage("It is a Message of Dialog Box");
         builder.setCancelable(false);
-
+        
     }
 }
